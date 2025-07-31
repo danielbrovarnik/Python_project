@@ -14,4 +14,4 @@
 
 
 
-![Viz](Images\skill_demand-data_roles.png)
+![Viz](Images/skill_demand-data_roles.png)

@@ -306,5 +306,5 @@ In contrast, the US has a larger and more mature data market with a greater dema
 
 Of course, this analysis is based on a limited sample size of job postings. A larger dataset would be required for a more statistically significant conclusion, but the observed difference is substantial enough to suggest it represents a genuine trend. This finding is quite intriguing.
 
-![viz](/Images\norway_job_postings_top3.png)
+![viz](/Images/norway_job_postings_top3.png)
 ![alt text](/Images/us-monthly-top-data-jobs.png)

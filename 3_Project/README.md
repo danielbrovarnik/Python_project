@@ -283,7 +283,7 @@ I recently visited the awesome country of Norway. This dataset was large enough 
 
 [Norway Roles Demand Notebook](6_exercise_job_demand.ipynb)
 
-![Flag-Norway](/Images\norwayflag.png)
+![Flag-Norway](/Images/norwayflag.png)
 ### Code
 
 ```python

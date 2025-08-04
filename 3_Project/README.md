@@ -276,3 +276,35 @@ This project was not without its challenges, but it provided good learning oppor
 # Conclusion
 
 This exploration into the data analyst job market has been incredibly informative, highlighting the critical skills and trends that shape this evolving field. The insights I got enhance my understanding and provide actionable guidance for anyone looking to advance their career in data analytics. As the market continues to change, ongoing analysis will be essential to stay ahead in data analytics. This project is a good foundation for future explorations and underscores the importance of continuous learning and adaptation in the data field.
+
+
+## Bonus Viz
+I recently visited the awesome country of Norway. This dataset was large enough and diverse enough that it contained quite a bit of job postings from Norway, specifically data roles. Below you can find the simple notebook I used to filter for the top data roles in Norway and then plotting them over the course of a year.
+
+[Norway Roles Demand Notebook](6_exercise_job_demand.ipynb)
+
+![Flag-Norway](/Images\norwayflag.png)
+### Code
+
+```python
+df_Norge = df[df['job_country']== 'Norway'].copy()
+df_Norge
+df_Norge['job_posted_month'] = df_Norge['job_posted_date'].dt.strftime('%B')
+df_Norge
+df_Norge_pivot = df_Norge.pivot_table(index='job_posted_month', columns='job_title_short', aggfunc='size')
+df_Norge_pivot.reset_index(inplace=True)
+df_Norge_pivot['month_no'] = pd.to_datetime(df_Norge_pivot['job_posted_month'], format='%B').dt.month
+df_Norge_pivot.sort_values('month_no',inplace = True)
+df_Norge_pivot.set_index('job_posted_month', inplace = True)
+df_Norge_pivot.drop(columns='month_no',inplace = True)
+df_Norge_pivot 
+```
+# Insights 
+This analysis of Norway found some interesting differences in data job markets. In Norway, roles for data engineers are more popular than those for data analysts. This is likely due to the country's economy, which is centered on large-scale industries like oil and gas, where the primary need is to build the data infrastructure.
+
+In contrast, the US has a larger and more mature data market with a greater demand for data analysts. The US economy's diversity, with many companies in e-commerce and finance, creates a need for professionals who can analyze existing data to make business decisions.
+
+Of course, this analysis is based on a limited sample size of job postings. A larger dataset would be required for a more statistically significant conclusion, but the observed difference is substantial enough to suggest it represents a genuine trend. This finding is quite intriguing.
+
+![viz](/Images\norway_job_postings_top3.png)
+![alt text](/Images/us-monthly-top-data-jobs.png)
